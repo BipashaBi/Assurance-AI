@@ -102,41 +102,42 @@ Mermaid Diagram: [AssuranceAI](AssuranceAI.svg)
 }
 
 ```
-## Referenced Clauses:
 
-Clause 1: "We cover maternity-related hospitalization expenses..."
+**Referenced Clauses**:
 
-Clause 2: "Air ambulance service is provided in emergency..."
+* Clause 1: "We cover maternity-related hospitalization expenses..."
+* Clause 2: "Air ambulance service is provided in emergency..."
+
+---
 
 ## 🚰 How It Works
 
-Upload Endpoint (/upload_docs) parses and chunks all uploaded files
+1. **Upload Endpoint** (`/upload_docs`) parses and chunks all uploaded files
+2. **Text is embedded** and stored in a FAISS index saved under `/data/session_<timestamp>/`
+3. **Query Endpoint** (`/query`) takes user query + session ID, retrieves relevant clauses, and forwards them to Gemini
+4. **Gemini generates** a JSON-based decision with reasoning and references
 
-Text is embedded and stored in a FAISS index saved under /data/session_<timestamp>/
+---
 
-Query Endpoint (/query) takes user query + session ID, retrieves relevant clauses, and forwards them to Gemini
+## 💡 Future Improvements
 
-Gemini generates a JSON-based decision with reasoning and references
+* Multi-user login & session history
+* Highlighting relevant source lines in UI
+* Exportable reports (PDF/JSON)
+* Analytics dashboard for policy trends
 
-##💡 Future Improvements
-
-Multi-user login & session history
-
-Highlighting relevant source lines in UI
-
-Exportable reports (PDF/JSON)
-
-Analytics dashboard for policy trends
+---
 
 ## 👥 Team
 
-Team Leader: Archita Saha
-Hackathon: Bajaj Finserv Hackathon 2025
+**Team Leader**: Archita Saha
+**Hackathon**: Bajaj Finserv Hackathon 2025
+
+---
 
 ## 📬 Contact
 
-LinkedIn – Archita Saha
-Mail - archita.saha2106@gmail.com
+**LinkedIn** – Archita Saha
+**Mail** - archita.saha2106@gmail.com
 
-
- 
+---
