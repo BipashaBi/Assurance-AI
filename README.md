@@ -248,4 +248,7 @@ Frontend will auto-open in your browser.
 
 * **LinkedIn** - [Soumyadeep Kundu](https://in.linkedin.com/in/vanxodus305/)
 * **Mail** - 2305820@kiit.ac.in
+
+* * **LinkedIn** - [Vanshdeep Singh](https://www.linkedin.com/in/vanshdeep--singh/)
+* **Mail** - Vanshdeepsingh.vds@gmail.com
 ---
