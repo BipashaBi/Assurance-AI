@@ -83,13 +83,6 @@ project/
 
 
 ```
-Mermaid Diagram: [VeriSureAI](VeriSureAI.svg)
-
-## 🔍 Example Output  
-
-**Query:**  
-*"Is cataract surgery covered?"*  
-
 Mermaid Diagram: [AssuranceAI](AssuranceAI.svg)  
 
 ---
