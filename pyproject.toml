@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "assurance-ai"
+name = "assurance_ai"
 version = "0.1.0"
 description = "Assurance AI is an intelligent, session-based insurance assistant that combines semantic document retrieval using FAISS with reasoning powered by Gemini 1.5 Flash. Users can upload multiple policy documents, ask natural language questions, and receive structured, justified decisions in real time. Each session is self-contained, allowing dynamic indexing, accurate clause referencing, and clean separation of uploaded contexts."
 readme = "README.md"
@@ -29,3 +29,4 @@ uvicorn = ">=0.35.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
