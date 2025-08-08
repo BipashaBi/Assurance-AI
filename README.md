@@ -83,7 +83,7 @@ project/
 
 
 ```
-Mermaid Diagram: [AssuranceAI](AssuranceAI.svg)  
+Mermaid Diagram: [AssuranceAI](assuranceAI.png)  
 
 ---
 
