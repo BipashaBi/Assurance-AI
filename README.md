@@ -1,16 +1,16 @@
 # Assurance AI – Bajaj Finserv Hackathon Submission  
 
-## 🚀 Overview  
+## Overview  
 
 **Assurance AI** is an intelligent document reasoning platform designed to simplify the analysis of complex insurance policy documents.  
 Users can upload one or more policy files (PDF or DOCX) and ask natural language questions.  
 The system uses **FAISS** for semantic clause retrieval and **Gemini 1.5 Flash** for reasoning, delivering structured, justified answers in JSON format.  
 
-> 💡 Inspired by real-world challenges in the insurance sector, Assurance AI aims to bring speed, accuracy, and transparency to policy understanding.  
+>  Inspired by real-world challenges in the insurance sector, Assurance AI aims to bring speed, accuracy, and transparency to policy understanding.  
 
 ---
 
-## 🎯 Problem Statement  
+##  Problem Statement  
 
 Insurance policy documents are often lengthy, full of technical terms, and prone to misinterpretation.  
 Manual reading takes time, and missing critical clauses can have serious consequences for customers and insurers alike.  
@@ -20,11 +20,11 @@ Manual reading takes time, and missing critical clauses can have serious consequ
 - Retrieving the most relevant clauses using semantic search  
 - Generating clear, structured, and justified answers using AI  
 
-📌 Problem Statement: [HackRx 6.0](https://hackrx.in/#problem-statement)  
+ Problem Statement: [HackRx 6.0](https://hackrx.in/#problem-statement)  
 
 ---
 
-## ✅ Key Features  
+##  Key Features  
 
 - **Multi-File Upload** – Supports multiple PDF/DOCX files in a single session  
 - **Session-Based Indexing** – Each session has its own FAISS index for data isolation  
@@ -34,7 +34,7 @@ Manual reading takes time, and missing critical clauses can have serious consequ
 
 ---
 
-## 🧠 Tech Stack  
+##  Tech Stack  
 
 | Component     | Technology/Tool                 | Version                      |
 | ------------- | ------------------------------- | ---------------------------- |
@@ -47,7 +47,7 @@ Manual reading takes time, and missing critical clauses can have serious consequ
 
 ---
 
-## 🧩 Version Progress  
+##  Version Progress  
 
 ### **V1 – Basic Version**  
 - Single document upload  
@@ -61,7 +61,7 @@ Manual reading takes time, and missing critical clauses can have serious consequ
 - Fully integrated upload → query loop in UI  
 
 ---
-## 🗂️ Folder Structure
+##  Folder Structure
 ```
 project/
 ├── app/
@@ -88,7 +88,7 @@ Mermaid Diagram: [AssuranceAI](assuranceAI.png)
 ---
 
 
-## ✅ Prerequisites
+##  Prerequisites
 
 Ensure the following are installed:
 
@@ -99,7 +99,7 @@ Ensure the following are installed:
 
 ---
 
-## 🧭 Setup Steps
+##  Setup Steps
 
 ### 1. Clone the Repository
 
@@ -125,7 +125,7 @@ pip install -r requirements.txt
 ```
 
 <details>
-<summary>💡 Using Poetry (if applicable)</summary>
+<summary> Using Poetry (if applicable)</summary>
 
 ```bash
 pip install poetry
@@ -174,7 +174,7 @@ Frontend will auto-open in your browser.
 
 ---
 
-## 🛠️ Troubleshooting
+##  Troubleshooting
 
 | Problem | Solution |
 |--------|----------|
@@ -186,7 +186,7 @@ Frontend will auto-open in your browser.
 ---
 
 
-## 🔍 Example Output  
+##  Example Output  
 
 **Query:**  
 *"Is cataract surgery covered?"*  
@@ -209,7 +209,7 @@ Frontend will auto-open in your browser.
 
 ---
 
-## 🚰 How It Works
+##  How It Works
 
 1. **Upload Endpoint** (`/upload_docs`) parses and chunks all uploaded files
 2. **Text is embedded** and stored in a FAISS index saved under `/data/session_<timestamp>/`
@@ -218,7 +218,7 @@ Frontend will auto-open in your browser.
 
 ---
 
-## 💡 Future Improvements
+##  Future Improvements
 
 * Multi-user login & session history
 * Highlighting relevant source lines in UI
@@ -228,14 +228,14 @@ Frontend will auto-open in your browser.
 ---
 
 
-## 👥 Team
+##  Team
 
 **Team Leader**: Archita Saha
 **Hackathon**: Bajaj Finserv Hackathon 2025
 
 ---
 
-## 📬 Contact
+##  Contact
 
 * **LinkedIn** - [Bipasha Biswas](https://www.linkedin.com/in/bipasha-biswas-9jan2005/)
 * **Mail** - bipashab497@gmail.com
