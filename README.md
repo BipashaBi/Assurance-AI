@@ -103,13 +103,13 @@ Mermaid Diagram: [AssuranceAI](AssuranceAI.svg)
 
 ```
 ## Referenced Clauses:
-```
+
 Clause 1: "We cover maternity-related hospitalization expenses..."
 
 Clause 2: "Air ambulance service is provided in emergency..."
-```
+
 ## 🚰 How It Works
-```
+
 Upload Endpoint (/upload_docs) parses and chunks all uploaded files
 
 Text is embedded and stored in a FAISS index saved under /data/session_<timestamp>/
@@ -117,9 +117,9 @@ Text is embedded and stored in a FAISS index saved under /data/session_<timestam
 Query Endpoint (/query) takes user query + session ID, retrieves relevant clauses, and forwards them to Gemini
 
 Gemini generates a JSON-based decision with reasoning and references
-```
+
 ##💡 Future Improvements
-```
+
 Multi-user login & session history
 
 Highlighting relevant source lines in UI
@@ -127,14 +127,14 @@ Highlighting relevant source lines in UI
 Exportable reports (PDF/JSON)
 
 Analytics dashboard for policy trends
-```
+
 ## 👥 Team
-```
+
 Team Leader: Archita Saha
 Hackathon: Bajaj Finserv Hackathon 2025
-```
+
 ## 📬 Contact
-```
+
 LinkedIn – Archita Saha
 Mail - archita.saha2106@gmail.com
 
