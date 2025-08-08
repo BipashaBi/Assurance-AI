@@ -68,19 +68,19 @@ Manual reading takes time, and missing critical clauses can have serious consequ
 project/
 ├── app/
 │   ├── core/
-│   │   ├── engine.py
-│   │   ├── retriever.py
-│   │   └── embedder.py
+│   │   ├── engine.py        # Gemini prompting logic
+│   │   ├── retriever.py     # FAISS index building & querying
+│   │   └── embedder.py      # Text embeddings
 │   ├── ingestion/
-│   │   ├── load.py
-│   │   └── chunk.py
-│   └── main.py
+│   │   ├── load.py          # Load content from files
+│   │   └── chunk.py         # Chunk raw text
+│   └── main.py              # FastAPI app
 ├── ui/
-│   └── app.py
+│   └── app.py               # Streamlit interface
 ├── data/
-│   └── session_<id>/index/
+│   └── session_<id>/index/  # Saved FAISS index + chunks
 ├── config/
-│   └── config.yaml
+│   └── config.yaml          # API keys and settings
 
 Mermaid Diagram: (AssuranceAI.svg)  
 
@@ -107,7 +107,6 @@ Mermaid Diagram: [AssuranceAI](AssuranceAI.svg)
   "amount": null,
   "justification": "The provided policy clauses do not contain any information regarding coverage for cataract."
 
----
 }
 
 
