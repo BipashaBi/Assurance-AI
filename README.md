@@ -63,6 +63,8 @@ Manual reading takes time, and missing critical clauses can have serious consequ
 ---
 
 ## 📂 Folder Structure  
+
+<details>
 project/
 ├── app/
 │   ├── core/
@@ -79,7 +81,7 @@ project/
 │   └── session_<id>/index/
 ├── config/
 │   └── config.yaml
-
+</details>
 Mermaid Diagram: [AssuranceAI](AssuranceAI.svg)  
 
 ---
