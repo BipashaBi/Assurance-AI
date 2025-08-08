@@ -61,31 +61,28 @@ Manual reading takes time, and missing critical clauses can have serious consequ
 - Fully integrated upload → query loop in UI  
 
 ---
-
-## 📂 Folder Structure  
-
----
+## 🗂️ Folder Structure
+```
 project/
 ├── app/
-│   ├── core/
-│   │   ├── engine.py
-│   │   ├── retriever.py
-│   │   └── embedder.py
-│   ├── ingestion/
-│   │   ├── load.py
-│   │   └── chunk.py
-│   └── main.py
+│ ├── core/
+│ │ ├── engine.py # Gemini prompting logic
+│ │ ├── retriever.py # FAISS index building & querying
+│ │ └── embedder.py # Text embeddings
+│ ├── ingestion/
+│ │ ├── load.py # Load content from files
+│ │ └── chunk.py # Chunk raw text
+│ └── main.py # FastAPI app
 ├── ui/
-│   └── app.py
+│ └── app.py # Streamlit interface
 ├── data/
-│   └── session_<id>/index/
+│ └── session_<id>/index/ # Saved FAISS index + chunks
 ├── config/
-│   └── config.yaml
-       # API keys and settings
----
-Mermaid Diagram: (AssuranceAI.svg)  
+│ └── config.yaml # API keys and settings
 
----
+Mermaid Diagram: [VeriSureAI](VeriSureAI.svg)
+
+```
 
 ## 🔍 Example Output  
 
@@ -109,6 +106,9 @@ Mermaid Diagram: [AssuranceAI](AssuranceAI.svg)
   "justification": "The provided policy clauses do not contain any information regarding coverage for cataract."
 
 }
+---
+
+```
 
 
 
