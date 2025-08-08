@@ -1,5 +1,5 @@
 [project]
-name = "Assurance AI"
+name = "assurance-ai"
 version = "0.1.0"
 description = "Assurance AI is an intelligent, session-based insurance assistant that combines semantic document retrieval using FAISS with reasoning powered by Gemini 1.5 Flash. Users can upload multiple policy documents, ask natural language questions, and receive structured, justified decisions in real time. Each session is self-contained, allowing dynamic indexing, accurate clause referencing, and clean separation of uploaded contexts."
 readme = "README.md"
@@ -23,3 +23,4 @@ dependencies = [
     "unstructured>=0.18.9",
     "uvicorn>=0.35.0",
 ]
+
