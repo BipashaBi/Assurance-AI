@@ -91,45 +91,26 @@ Mermaid Diagram: (AssuranceAI.svg)
 **Query:**  
 *"Is cataract surgery covered?"*  
 
-JSON Output:
+Mermaid Diagram: [AssuranceAI](AssuranceAI.svg)  
+
+---
+
+## 🔍 Example Output  
+
+**Query:**  
+*"Is cataract surgery covered?"*  
+
+**JSON Output:**  
+```json
 {
   "decision": "rejected",
   "amount": null,
   "justification": "The provided policy clauses do not contain any information regarding coverage for cataract."
+
+---
 }
 
 
----
 
-
-Referenced Clauses:
-"We cover maternity-related hospitalization expenses..."
-"Air ambulance service is provided in emergency..."
-
-⚙️ How It Works
-Upload Documents via /upload_docs endpoint
-
-Files are parsed, chunked, and embedded into a FAISS index stored under /data/session_<timestamp>/
-
-Query is sent to /query with session ID → relevant chunks are retrieved
-
-Gemini LLM generates a JSON decision with reasoning and referenced clauses
-
-🚀 Future Roadmap
-User authentication and session history tracking
-
-Highlighting matched clauses in the UI
-
-Exportable results in PDF/JSON formats
-
-Insights dashboard for policy analysis
-
-👥 Team
-Team Leader: Archita Saha
-Hackathon: Bajaj Finserv Hackathon 2025
-
-📬 Contact
-LinkedIn – Archita Saha
-Mail - archita.saha2106@gmail.com
 
  
