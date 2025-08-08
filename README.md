@@ -87,6 +87,105 @@ Mermaid Diagram: [AssuranceAI](assuranceAI.png)
 
 ---
 
+
+## ✅ Prerequisites
+
+Ensure the following are installed:
+
+- Python 3.10+
+- Git
+- pip (Python package manager)
+- virtualenv (recommended)
+
+---
+
+## 🧭 Setup Steps
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/BipashaBi/Assurance-AI.git
+cd Assurance-AI
+```
+
+### 2. Create and Activate Virtual Environment
+
+```bash
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# macOS/Linux
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+<details>
+<summary>💡 Using Poetry (if applicable)</summary>
+
+```bash
+pip install poetry
+poetry install
+```
+
+</details>
+
+### 4. Create Required Folders
+
+```bash
+mkdir -p temp_uploads data
+```
+
+### 5. Set Environment Variables (if required)
+
+Create a `.env` file:
+
+```
+GEMINI_API_KEY=your_key_here
+```
+
+Or set directly in terminal:
+
+```bash
+export GEMINI_API_KEY=your_key_here     # macOS/Linux
+set GEMINI_API_KEY=your_key_here        # Windows
+```
+
+### 6. Run FastAPI Backend
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Visit: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+### 7. Run Streamlit Frontend (Optional)
+
+```bash
+cd ui
+streamlit run app.py
+```
+
+Frontend will auto-open in your browser.
+
+---
+
+## 🛠️ Troubleshooting
+
+| Problem | Solution |
+|--------|----------|
+| `ModuleNotFoundError` | Ensure you're in the root folder |
+| `PermissionError` for folders | Use `mkdir` to manually create `temp_uploads/` and `data/` |
+| FAISS errors | Run: `pip install faiss-cpu` |
+| Gemini API issues | Double-check your API key in `.env` or environment variables |
+
+---
+
+
 ## 🔍 Example Output  
 
 **Query:**  
