@@ -64,7 +64,7 @@ Manual reading takes time, and missing critical clauses can have serious consequ
 
 ## 📂 Folder Structure  
 
-<details>
+<details><summary>Click to expand</summary>
 project/
 ├── app/
 │   ├── core/
