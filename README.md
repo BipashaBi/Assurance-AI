@@ -230,8 +230,8 @@ Frontend will auto-open in your browser.
 
 ##  Team
 
-**Team Leader**: Archita Saha
-**Hackathon**: Bajaj Finserv Hackathon 2025
+* **Team Leader**: Archita Saha
+* **Hackathon**: Bajaj Finserv Hackathon 2025
 
 ---
 
@@ -243,4 +243,9 @@ Frontend will auto-open in your browser.
 * **LinkedIn** – [Archita Saha](https://www.linkedin.com/in/architasaha21/)
 * **Mail** - archita.saha2106@gmail.com
 
+* **LinkedIn** - [Jeet Das]((https://www.linkedin.com/in/jeet-das-7633a52ab)/)
+* **Mail** - jeet15083011@gmail.com
+
+* * **LinkedIn** - [Soumyadeep Kundu]((https://in.linkedin.com/in/vanxodus305)/)
+* **Mail** - 2305820@kiit.ac.in
 ---
