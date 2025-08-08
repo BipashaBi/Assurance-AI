@@ -138,7 +138,9 @@ Mermaid Diagram: [AssuranceAI](assuranceAI.png)
 
 ## 📬 Contact
 
-**LinkedIn** – [Archita Saha](https://www.linkedin.com/in/architasaha21/)
-**Mail** - archita.saha2106@gmail.com
+* **LinkedIn** – [Archita Saha](https://www.linkedin.com/in/architasaha21/)
+* **Mail** - archita.saha2106@gmail.com
+* **LinkedIn** - [Bipasha Biswas](www.linkedin.com/in/bipasha-biswas-9jan2005/)
+* **Mail** - bipashab497@gmail.com
 
 ---
