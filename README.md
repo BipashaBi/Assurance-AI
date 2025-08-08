@@ -68,19 +68,20 @@ Manual reading takes time, and missing critical clauses can have serious consequ
 project/
 ├── app/
 │   ├── core/
-│   │   ├── engine.py        # Gemini prompting logic
-│   │   ├── retriever.py     # FAISS index building & querying
-│   │   └── embedder.py      # Text embeddings
+│   │   ├── engine.py
+│   │   ├── retriever.py
+│   │   └── embedder.py
 │   ├── ingestion/
-│   │   ├── load.py          # Load content from files
-│   │   └── chunk.py         # Chunk raw text
-│   └── main.py              # FastAPI app
+│   │   ├── load.py
+│   │   └── chunk.py
+│   └── main.py
 ├── ui/
-│   └── app.py               # Streamlit interface
+│   └── app.py
 ├── data/
-│   └── session_<id>/index/  # Saved FAISS index + chunks
+│   └── session_<id>/index/
 ├── config/
-│   └── config.yaml          # API keys and settings
+│   └── config.yaml
+       # API keys and settings
 
 Mermaid Diagram: (AssuranceAI.svg)  
 
