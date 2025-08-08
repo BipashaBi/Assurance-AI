@@ -246,6 +246,6 @@ Frontend will auto-open in your browser.
 * **LinkedIn** - [Jeet Das](https://www.linkedin.com/in/jeet-das-7633a52ab/)
 * **Mail** - jeet15083011@gmail.com
 
-* **LinkedIn** - [Soumyadeep Kundu](https://in.linkedin.com/in/vanxodus305)/)
+* **LinkedIn** - [Soumyadeep Kundu](https://in.linkedin.com/in/vanxodus305/)
 * **Mail** - 2305820@kiit.ac.in
 ---
