@@ -64,7 +64,7 @@ Manual reading takes time, and missing critical clauses can have serious consequ
 
 ## 📂 Folder Structure  
 
-
+---
 project/
 ├── app/
 │   ├── core/
@@ -82,7 +82,7 @@ project/
 ├── config/
 │   └── config.yaml
        # API keys and settings
-
+---
 Mermaid Diagram: (AssuranceAI.svg)  
 
 ---
