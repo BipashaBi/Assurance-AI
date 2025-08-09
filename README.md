@@ -228,14 +228,14 @@ Frontend will auto-open in your browser.
 ---
 
 
-##  Team
+##  Team Leader and Hackathon name
 
 * **Team Leader**: Archita Saha
 * **Hackathon**: Bajaj Finserv Hackathon 2025
 
 ---
 
-##  Contact
+##  Contact the Members
 
 * **LinkedIn** - [Bipasha Biswas](https://www.linkedin.com/in/bipasha-biswas-9jan2005/)
 * **Mail** - bipashab497@gmail.com
