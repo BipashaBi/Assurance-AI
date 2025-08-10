@@ -9,19 +9,12 @@ from typing import List
 from datetime import datetime
 import os
 
+# Create the app only once
 app = FastAPI(
     title="Assurance AI",
     description="Assurance AI is an intelligent, session-based insurance assistant that combines semantic document retrieval using FAISS with reasoning powered by Gemini 1.5 Flash. Users can upload multiple policy documents, ask natural language questions, and receive structured, justified decisions in real time. Each session is self-contained, allowing dynamic indexing, accurate clause referencing, and clean separation of uploaded contexts.",
     version="1.0"
 )
-from fastapi import FastAPI
-
-app = FastAPI()
-
-@app.post("/api/v1/hackrx/run")
-def run_solution(payload: dict):
-    # Your solution logic here
-    return {"status": "success", "result": "Your output here"}
 
 # CORS settings
 app.add_middleware(
@@ -32,23 +25,29 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Request body model for /query
 class QueryRequest(BaseModel):
     query: str
     session_id: str
 
+# Root endpoint
 @app.get("/")
 def root():
     return {"message": "Assurance AI is live!"}
 
+# HackRx webhook endpoint
+@app.post("/api/v1/hackrx/run")
+def run_solution(payload: dict):
+    # Integrate your HackRx-specific solution logic here
+    return {"status": "success", "result": "Your output here"}
+
+# Query endpoint
 @app.post("/query")
 def query_docs(request: QueryRequest):
     session_id = request.session_id
     try:
         relevant_chunks = retrieve_chunks(request.query, session_id, k=5)
         answer = evaluate_decision(request.query, session_id)
-        print("Query received:", request.query)
-        print("Chunks retrieved:", relevant_chunks)
-        print("Answer returned:", answer)
         return {
             "query": request.query,
             "response": answer,
@@ -57,6 +56,7 @@ def query_docs(request: QueryRequest):
     except Exception as e:
         return {"error": str(e)}
 
+# Document upload endpoint
 @app.post("/upload_docs")
 async def upload_docs(uploaded_files: List[UploadFile] = File(...)):
     responses = []
