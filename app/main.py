@@ -14,6 +14,14 @@ app = FastAPI(
     description="Assurance AI is an intelligent, session-based insurance assistant that combines semantic document retrieval using FAISS with reasoning powered by Gemini 1.5 Flash. Users can upload multiple policy documents, ask natural language questions, and receive structured, justified decisions in real time. Each session is self-contained, allowing dynamic indexing, accurate clause referencing, and clean separation of uploaded contexts.",
     version="1.0"
 )
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.post("/api/v1/hackrx/run")
+def run_solution(payload: dict):
+    # Your solution logic here
+    return {"status": "success", "result": "Your output here"}
 
 # CORS settings
 app.add_middleware(
