@@ -20,6 +20,9 @@ def get_index():
     if not hasattr(get_index, "index"):
         get_index.index = build_index(...)
     return get_index.index
+    
+faiss.write_index(index, "index.faiss")
+index = faiss.read_index("index.faiss")
 
 
 # CORS settings
