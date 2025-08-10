@@ -16,6 +16,12 @@ app = FastAPI(
     version="1.0"
 )
 
+def get_index():
+    if not hasattr(get_index, "index"):
+        get_index.index = build_index(...)
+    return get_index.index
+
+
 # CORS settings
 app.add_middleware(
     CORSMiddleware,
