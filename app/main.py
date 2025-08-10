@@ -1,29 +1,20 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from app.core.retriever import retrieve_chunks, build_index
-from app.core.engine import evaluate_decision
-from app.ingestion.load import load_content
-from app.ingestion.chunk import chunk_text
 from typing import List
 from datetime import datetime
 import os
+import gc
 
-# Create the app only once
+# Import lightweight modules first
+from app.ingestion.load import load_content
+from app.ingestion.chunk import chunk_text
+
 app = FastAPI(
-    title="Assurance AI",
-    description="Assurance AI is an intelligent, session-based insurance assistant that combines semantic document retrieval using FAISS with reasoning powered by Gemini 1.5 Flash. Users can upload multiple policy documents, ask natural language questions, and receive structured, justified decisions in real time. Each session is self-contained, allowing dynamic indexing, accurate clause referencing, and clean separation of uploaded contexts.",
+    title="Assurance AI - Low RAM",
+    description="Optimized for 512MB RAM on Render",
     version="1.0"
 )
-
-def get_index():
-    if not hasattr(get_index, "index"):
-        get_index.index = build_index(...)
-    return get_index.index
-    
-faiss.write_index(index, "index.faiss")
-index = faiss.read_index("index.faiss")
-
 
 # CORS settings
 app.add_middleware(
@@ -34,38 +25,58 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Request body model for /query
+# Request body for /query
 class QueryRequest(BaseModel):
     query: str
     session_id: str
 
-# Root endpoint
 @app.get("/")
 def root():
-    return {"message": "Assurance AI is live!"}
+    return {"message": "Assurance AI Low-RAM version is live!"}
 
-# HackRx webhook endpoint
 @app.post("/api/v1/hackrx/run")
 def run_solution(payload: dict):
-    # Integrate your HackRx-specific solution logic here
-    return {"status": "success", "result": "Your output here"}
+    """
+    HackRx Webhook:
+    Load heavy stuff only inside this function, then free it.
+    """
+    try:
+        from app.core.retriever import retrieve_chunks, build_index
+        from app.core.engine import evaluate_decision
 
-# Query endpoint
+        query = payload.get("query", "")
+        session_id = payload.get("session_id", "temp_session")
+
+        relevant_chunks = retrieve_chunks(query, session_id, k=3)
+        answer = evaluate_decision(query, session_id)
+
+        # Free memory after use
+        del relevant_chunks, answer
+        gc.collect()
+
+        return {"status": "success", "result": "Processed query"}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
 @app.post("/query")
 def query_docs(request: QueryRequest):
-    session_id = request.session_id
     try:
-        relevant_chunks = retrieve_chunks(request.query, session_id, k=5)
-        answer = evaluate_decision(request.query, session_id)
+        from app.core.retriever import retrieve_chunks
+        from app.core.engine import evaluate_decision
+
+        relevant_chunks = retrieve_chunks(request.query, request.session_id, k=3)
+        answer = evaluate_decision(request.query, request.session_id)
+
+        del relevant_chunks, answer
+        gc.collect()
+
         return {
             "query": request.query,
             "response": answer,
-            "retrieved_clauses": relevant_chunks
         }
     except Exception as e:
         return {"error": str(e)}
 
-# Document upload endpoint
 @app.post("/upload_docs")
 async def upload_docs(uploaded_files: List[UploadFile] = File(...)):
     responses = []
@@ -91,13 +102,17 @@ async def upload_docs(uploaded_files: List[UploadFile] = File(...)):
                 "session_id": session_id
             })
 
+        from app.core.retriever import build_index
         build_index(alltext_chunks, session_id, force_rebuild=True)
+
+        # Free memory
+        del alltext_chunks
+        gc.collect()
 
         return {
             "status": "success",
             "indexed_files": responses,
-            "session_id": session_id,
-            "message": "All uploaded documents parsed and indexed into a single index."
+            "session_id": session_id
         }
 
     except Exception as e:
